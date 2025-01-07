@@ -4,6 +4,14 @@
 
 void somaParesForcaBruta(int *v, int somaAlvo, int tam, int *n1, int *n2)
 {
+    if (v == NULL || tam == 0)
+    {
+        *n1 = -1;
+        *n2 = -1;
+        return;
+    }
+    
+
     for (int i = 0; i < tam - 1; i++)
     {
         for (int j = i + 1; j < tam; j++)
@@ -23,6 +31,14 @@ void somaParesForcaBruta(int *v, int somaAlvo, int tam, int *n1, int *n2)
 
 void somaParesDivideConquista(int *v, int somaAlvo, int tam, int *n1, int *n2)
 {
+    if (v == NULL || tam == 0)
+    {
+        *n1 = -1;
+        *n2 = -1;
+        return;
+    }
+    
+
     quickSort(v, 0, tam - 1);
     verificaAtribuiSomaParesDivideConquista(v, somaAlvo, 0, tam - 1, n1, n2);
 }
