@@ -4,17 +4,19 @@
 
 int main()
 {
-    int v[] = {1, 2, 3, 4};
-    int somaAlvo = 7;
+    int v[100000];
+    int somaAlvo = 10;
     int tam = sizeof(v) / sizeof(v[0]);
     int n1, n2;
 
-    somaParesForcaBruta(v, somaAlvo, tam, &n1, &n2);
-    printf("Força bruta:\nPar: %d %d\n\n", n1, n2);
+    printf("Algoritmos:\n");
 
-    somaParesDivideConquista(v, somaAlvo, tam, &n1, &n2);
-    printf("Dividir e conquistar:\nPar: %d %d\n\n", n1, n2);
-
-    somaParesProgramacaoDinamica(v, somaAlvo, tam, &n1, &n2);
-    printf("Programação dinâmica:\nPar: %d %d\n\n", n1, n2);
+    printf("Força Bruta:\n");
+    exibirDesempenhoAlgoritmo(somaParesForcaBruta, v, somaAlvo, tam);
+    
+    printf("\nDividir e Conquistar:\n");
+    exibirDesempenhoAlgoritmo(somaParesDivideConquista, v, somaAlvo, tam);
+    
+    printf("\nProgramação Dinâmica:\n");
+    exibirDesempenhoAlgoritmo(somaParesProgramacaoDinamica, v, somaAlvo, tam);
 }
